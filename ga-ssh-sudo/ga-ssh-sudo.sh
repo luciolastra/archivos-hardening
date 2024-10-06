@@ -76,5 +76,8 @@ sed -i '5i auth required pam_google_authenticator.so' /etc/pam.d/sshd
 systemctl restart ssh;
 
 # Invocar al firewall a traves de 'nftables'
-cd ../nftables
-./nftables.sh
+
+cp /nftables.conf /etc/nftables.conf
+
+systemctl start nftables
+systemctl enable nftables
