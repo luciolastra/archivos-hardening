@@ -17,6 +17,9 @@ chmod 400 .google_authenticator;
 # puede asignarsela.
 useradd -m -d /home/sysadmin2 -s /bin/bash sysadmin2
 
+# Se agrega a grupo 'sudo' con control total.
+usermod -aG sudo sysadmin2
+
 # Se repite el proceso del archivo '.google_authenticator' para usuario 'sysadmin2'
 
 mv /.google_authenticator3 /home/sysadmin2/.google_authenticator;
