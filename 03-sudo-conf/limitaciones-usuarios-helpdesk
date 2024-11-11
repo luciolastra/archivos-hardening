@@ -1,0 +1,12 @@
+# Se define un grupo de usuarios de help desk. En este caso hay uno solo pero
+# si fuera necesario podrian agregarse N y tendrian las mismas restricciones
+# en sus acciones usando 'sudo'.
+User_Alias HELP_DESK_USERS = helpdesk1
+
+# Se definen los comandos que pueden ser ejecutados como 'sudo'. Como se ve,
+# solo se puede iniciar, detener, reiniciar y obtener el estado del servidor
+# 'apache2'.
+Cmnd_Alias HELP_DESK_USERS_COMMANDS = /usr/bin/systemctl start apache2, /usr/bin/systemctl stop apache2, /usr/bin/systemctl restart apache2, /usr/bin/systemctl status apache2
+
+# Se mapea el grupo de usuarios con los comandos previamente definidos.
+HELP_DESK_USERS ALL=(ALL) HELP_DESK_USERS_COMMANDS
