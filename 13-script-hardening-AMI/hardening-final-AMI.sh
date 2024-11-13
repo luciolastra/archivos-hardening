@@ -87,6 +87,7 @@ mv /login.defs /etc/
 # Setea password de GRUB
 
 mv /40_custom /etc/grub.d/40_custom
+chmod 755 /etc/grub.d/40_custom
 
 # Configura las audit rules
 
