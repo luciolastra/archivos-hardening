@@ -62,15 +62,18 @@ mv /issue* /etc/
 mv /aide /etc/default/
 mv /aide.conf /etc/aide/
 
-# aide --init --config /etc/aide/aide.conf
-# cp -p /var/lib/aide/aide.db.new /var/lib/aide/aide.db
+# Se inicializa la base de datos
+aide --init --config /etc/aide/aide.conf
+
+# Se copia la base de datos generada a la base de datos principal.
+cp -p /var/lib/aide/aide.db.new /var/lib/aide/aide.db
 
 # Se copian archivos de configuracion de fail2ban
 
 mv /paths-debian.conf /etc/fail2ban/paths-debian.conf
 mv /jail.local /etc/fail2ban/jail.local
 
-# systemctl restart fail2ban
+systemctl restart fail2ban
 
 # Se copia este archivo que contiene las politicas de password
 # recomendadas por Lynis.
