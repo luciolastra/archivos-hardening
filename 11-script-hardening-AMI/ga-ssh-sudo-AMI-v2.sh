@@ -55,7 +55,7 @@ mv /*.conf /etc/modprobe.d/
 
 # Se setean los banners
 
-mv issue* /etc/
+mv /issue* /etc/
 
 # Se copian archivos de configuracion de AIDE
 
@@ -76,3 +76,9 @@ mv /jail.local /etc/fail2ban/jail.local
 # recomendadas por Lynis.
 
 mv /login.defs /etc/
+
+# Eliminar archivos
+
+rm /instalar-paquetes-AMI.sh
+rm /eliminar-paquetes.sh
+rm /nftables-AMI.sh
