@@ -47,28 +47,32 @@ chmod 400 /home/sysadmin2/.ssh/authorized_keys;
 mv /sshd_config /etc/ssh/sshd_config;
 mv /sshd /etc/pam.d/sshd
 
-# Puerto 17484 en vez de 22. Evita muchas entradas en los logs por bots que
-# escanean el puerto por defecto.
-
-#sed -i "s/#Port 22/Port 17484/" /etc/ssh/sshd_config
-
-# Se deshabilita el login del usuario root (que ademas no tiene permitido el login:
-# ver archivo 'preseed.cfg' parte 'B.4.5. Account setup')
-
-#sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin prohibit-password/" /etc/ssh/sshd_config
-
-# Permite que se pueda ingresar el codigo de verificacion
-
-#sed -i "s/KbdInteractiveAuthentication no/KbdInteractiveAuthentication yes/" /etc/ssh/sshd_config
-
-# Se definen los metodos de autenticacion: con key y codigo de verificacion.
-
-#echo "AuthenticationMethods publickey,keyboard-interactive" >> /etc/ssh/sshd_config
-
-# Insertar 'auth required pam_google_authenticator.so' en la quinta linea del archivo /etc/pam.d/sshd
-
-#sed -i '5i auth required pam_google_authenticator.so' /etc/pam.d/sshd
-
-# Finalmente reiniciamos el servicio
-
 systemctl restart ssh;
+
+# Se copian los modulos recomendados por Lynis para deshabilitar
+
+mv /*.conf /etc/modprobe.d/
+
+# Se setean los banners
+
+mv issue* /etc/
+
+# Se copian archivos de configuracion de AIDE
+
+mv /aide /etc/default/
+mv /aide.conf /etc/aide/
+
+# aide --init --config /etc/aide/aide.conf
+# cp -p /var/lib/aide/aide.db.new /var/lib/aide/aide.db
+
+# Se copian archivos de configuracion de fail2ban
+
+mv /paths-debian.conf /etc/fail2ban/paths-debian.conf
+mv /jail.local /etc/fail2ban/jail.local
+
+# systemctl restart fail2ban
+
+# Se copia este archivo que contiene las politicas de password
+# recomendadas por Lynis.
+
+mv /login.defs /etc/
