@@ -49,6 +49,15 @@ mv /sshd /etc/pam.d/sshd
 
 systemctl restart ssh;
 
+
+# Deshabilita core dumps.
+
+mv /limits.conf /etc/security/limits.conf
+mv /sysctl.conf /etc/sysctl.conf
+
+sysctl -p /etc/sysctl.conf
+
+
 # Se copian los modulos recomendados por Lynis para deshabilitar
 
 mv /*.conf /etc/modprobe.d/
@@ -76,13 +85,6 @@ systemctl restart fail2ban
 # recomendadas por Lynis.
 
 mv /login.defs /etc/
-
-# Deshabilita core dumps.
-
-mv /limits.conf /etc/security/limits.conf
-mv /sysctl.conf /etc/sysctl.conf
-
-sysctl -p /etc/sysctl.conf
 
 # Setea password de GRUB
 
