@@ -77,6 +77,17 @@ systemctl restart fail2ban
 
 mv /login.defs /etc/
 
+# Deshabilita core dumps.
+
+mv /limits.conf /etc/security/limits.conf
+mv /sysctl.conf /etc/sysctl.conf
+
+sysctl -p /etc/sysctl.conf
+
+# Setea password de GRUB
+
+mv /40_custom /etc/grub.d/40_custom
+
 # Eliminar archivos
 
 rm /instalar-paquetes-AMI.sh
