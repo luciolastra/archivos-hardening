@@ -49,7 +49,6 @@ mv /sshd /etc/pam.d/sshd
 
 systemctl restart ssh;
 
-
 # Deshabilita core dumps.
 
 mv /limits.conf /etc/security/limits.conf
@@ -57,8 +56,7 @@ mv /sysctl.conf /etc/sysctl.conf
 
 sysctl -p /etc/sysctl.conf
 
-
-# Se copian los modulos recomendados por Lynis para deshabilitar
+# Se copian los modulos recomendados por Lynis para deshabilitar.
 
 mv /*.conf /etc/modprobe.d/
 
@@ -89,6 +87,12 @@ mv /login.defs /etc/
 # Setea password de GRUB
 
 mv /40_custom /etc/grub.d/40_custom
+
+# Configura las audit rules
+
+mv /audit.rules /etc/audit/rules.d/
+systemctl restart auditd
+systemctl enable auditd
 
 # Eliminar archivos
 
