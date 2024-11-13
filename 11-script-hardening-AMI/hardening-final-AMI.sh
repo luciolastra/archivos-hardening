@@ -62,11 +62,8 @@ mv /issue* /etc/
 mv /aide /etc/default/
 mv /aide.conf /etc/aide/
 
-# Se inicializa la base de datos
-#aide --init --config /etc/aide/aide.conf
-
-# Se copia la base de datos generada a la base de datos principal.
-#cp -p /var/lib/aide/aide.db.new /var/lib/aide/aide.db
+# Se inicializa la base de datos y se copia a la principal al final del
+# archivo preseed.
 
 # Se copian archivos de configuracion de fail2ban
 
