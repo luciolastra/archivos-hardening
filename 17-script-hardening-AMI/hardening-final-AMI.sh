@@ -105,7 +105,7 @@ mv /pwquality.conf /etc/security/pwquality.conf
 
 # Deshabilitar IPv6.
 
-mv /60-custom.conf /etc/sysctl/60-custom.conf
+mv /60-custom.conf /etc/sysctl.d/60-custom.conf
 
 # Configuracion de upgrades desatendidos.
 
