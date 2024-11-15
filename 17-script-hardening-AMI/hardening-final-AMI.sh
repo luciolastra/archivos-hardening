@@ -75,7 +75,6 @@ mv /aide.conf /etc/aide/
 # Se copian archivos de configuracion de fail2ban.
 
 echo "sshd_backend = systemd" >> /etc/fail2ban/paths-debian.conf
-
 mv /jail.local /etc/fail2ban/jail.local
 
 systemctl restart fail2ban
@@ -98,20 +97,18 @@ systemctl enable auditd
 
 # Configuracion de adduser.
 
-#rm /etc/adduser.conf
-#cp /adduser.conf /etc/
+mv /adduser.conf /etc/adduser.conf
 
 # Configuracion de pwquality.
 
-#rm /etc/security/pwquality.conf
-#cp /pwquality.conf /etc/security/
+mv /pwquality.conf /etc/security/pwquality.conf 
 
 # Deshabilitar IPv6.
 
-#cp /60-custom.conf /etc/sysctl.d/
+mv /60-custom.conf /etc/sysctl.d/60-custom.conf
 
-#sysctl -p
-#systemctl restart procps
+sysctl -p
+systemctl restart procps
 
 # Configuracion de upgrades desatendidos.
 

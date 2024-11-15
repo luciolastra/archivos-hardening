@@ -18,7 +18,6 @@ wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads
 wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/06-instalar-paquetes/instalar-paquetes-AMI.sh;
 wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/07-eliminar-paquetes/eliminar-paquetes.sh;
 wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/08-configuracion-paquetes/00-fail2ban/jail.local;
-wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/08-configuracion-paquetes/00-fail2ban/paths-debian.conf;
 wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/08-configuracion-paquetes/01-aide/aide;
 wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/08-configuracion-paquetes/01-aide/aide.conf;
 wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/09-etc-login.defs/login.defs;
