@@ -64,7 +64,7 @@ mv /*.conf /etc/modprobe.d/
 
 mv /issue* /etc/
 
-# Se copian archivos de configuracion de AIDE
+# Se copian archivos de configuracion de AIDE.
 
 mv /aide /etc/default/
 mv /aide.conf /etc/aide/
@@ -72,7 +72,7 @@ mv /aide.conf /etc/aide/
 # Se inicializa la base de datos y se copia a la principal al final del
 # archivo preseed.
 
-# Se copian archivos de configuracion de fail2ban
+# Se copian archivos de configuracion de fail2ban.
 
 mv /paths-debian.conf /etc/fail2ban/paths-debian.conf
 mv /jail.local /etc/fail2ban/jail.local
@@ -94,6 +94,22 @@ chmod 755 /etc/grub.d/40_custom
 mv /audit.rules /etc/audit/rules.d/
 systemctl restart auditd
 systemctl enable auditd
+
+# Configuracion de adduser.
+
+mv /adduser.conf /etc/adduser.conf
+
+# Configuracion de pwquality.
+
+mv /pwquality.conf /etc/security/pwquality.conf
+
+# Deshabilitar IPv6.
+
+mv /60-custom.conf /etc/sysctl/60-custom.conf
+
+# Configuracion de upgrades desatendidos.
+
+mv /50unattended-upgrades /etc/apt/apt.conf.d/50unattended-upgrades
 
 # Eliminar archivos
 
