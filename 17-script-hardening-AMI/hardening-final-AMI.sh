@@ -74,9 +74,7 @@ mv /aide.conf /etc/aide/
 
 # Se copian archivos de configuracion de fail2ban.
 
-rm /etc/fail2ban/paths-debian.conf
-cp /paths-debian.conf /etc/fail2ban/
-
+echo "sshd_backend = systemd" >> /etc/fail2ban/paths-debian.conf
 
 mv /jail.local /etc/fail2ban/jail.local
 
