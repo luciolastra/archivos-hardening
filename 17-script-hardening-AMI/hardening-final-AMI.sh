@@ -74,7 +74,10 @@ mv /aide.conf /etc/aide/
 
 # Se copian archivos de configuracion de fail2ban.
 
-mv /paths-debian.conf /etc/fail2ban/paths-debian.conf
+rm /etc/fail2ban/paths-debian.conf
+cp /paths-debian.conf /etc/fail2ban/
+
+
 mv /jail.local /etc/fail2ban/jail.local
 
 systemctl restart fail2ban
