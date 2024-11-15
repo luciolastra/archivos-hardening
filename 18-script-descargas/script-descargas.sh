@@ -1,0 +1,35 @@
+#!/bin/bash
+
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/00-sshd/sshd_config;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/00-sshd/etc-pam.d-sshd/sshd;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/01-ssh-cliente/authorized_keys_sysadmin;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/01-ssh-cliente/authorized_keys_sysadmin2;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/02-google-authenticator/.google_authenticator;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/02-google-authenticator/.google_authenticator3;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/04-etc-modprobe.d/dccp.conf;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/04-etc-modprobe.d/firewire-core.conf;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/04-etc-modprobe.d/intel-microcode-blacklist.conf;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/04-etc-modprobe.d/rds.conf;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/04-etc-modprobe.d/sctp.conf;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/04-etc-modprobe.d/tipc.conf;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/04-etc-modprobe.d/usb-storage.conf;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/05-etc-banner/issue;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/05-etc-banner/issue.net;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/06-instalar-paquetes/instalar-paquetes-AMI.sh;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/07-eliminar-paquetes/eliminar-paquetes.sh;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/08-configuracion-paquetes/00-fail2ban/jail.local;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/08-configuracion-paquetes/00-fail2ban/paths-debian.conf;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/08-configuracion-paquetes/01-aide/aide;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/08-configuracion-paquetes/01-aide/aide.conf;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/09-etc-login.defs/login.defs;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/10-nftables/nftables-AMI.conf;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/10-nftables/nftables-AMI.sh;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/11-disable-core-dumps/limits.conf;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/11-disable-core-dumps/sysctl.conf;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/12-password-grub/40_custom;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/13-adduser/adduser.conf;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/14-pwquality/pwquality.conf;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/15-deshabilitar-IPv6/60-custom.conf;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/16-updates-desatendidos/50unattended-upgrades;
+wget https://raw.githubusercontent.com/Neo23x0/auditd/master/audit.rules;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/17-script-hardening-AMI/hardening-final-AMI.sh;
