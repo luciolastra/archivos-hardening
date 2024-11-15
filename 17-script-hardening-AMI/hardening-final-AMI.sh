@@ -97,20 +97,20 @@ systemctl enable auditd
 
 # Configuracion de adduser.
 
-rm /etc/adduser.conf
-cp /adduser.conf /etc/
+#rm /etc/adduser.conf
+#cp /adduser.conf /etc/
 
 # Configuracion de pwquality.
 
-rm /etc/security/pwquality.conf
-cp /pwquality.conf /etc/security/
+#rm /etc/security/pwquality.conf
+#cp /pwquality.conf /etc/security/
 
 # Deshabilitar IPv6.
 
-cp /60-custom.conf /etc/sysctl.d/
+#cp /60-custom.conf /etc/sysctl.d/
 
-sysctl -p
-systemctl restart procps
+#sysctl -p
+#systemctl restart procps
 
 # Configuracion de upgrades desatendidos.
 
