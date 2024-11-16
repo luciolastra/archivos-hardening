@@ -95,20 +95,44 @@ mv /audit.rules /etc/audit/rules.d/
 systemctl restart auditd
 systemctl enable auditd
 
+# 'adduser' en Debian y Ubuntu 22.04 crean directorios home de usuarios con
+# permisos 755. Para cambiarlo de forma que sea segura editamos el valor de 'DIR_MODE'
+
+sed -i "s/#DIR_MODE=0700/DIR_MODE=0700/" /etc/adduser.conf
+
+# Politicas de contrasenas
+# Largo minimo 14 caracteres
+
+sed -i "s/# minlen = 8/minlen = 14/" /etc/security/pwquality.conf
+
+# 3 digitos, 3 caracteres en mayuscula, 3 caracteres en minuscula, 3  caracteres
+# de otro tipo
+
+sed -i "s/# minclass = 0/minclass = 3/" /etc/security/pwquality.conf
+
+
 # Configuracion de adduser.
 
-mv /adduser.conf /etc/adduser.conf
+#mv /adduser.conf /etc/adduser.conf
 
 # Configuracion de pwquality.
 
-mv /pwquality.conf /etc/security/pwquality.conf 
+#mv /pwquality.conf /etc/security/pwquality.conf 
 
 # Deshabilitar IPv6.
 
-mv /60-custom.conf /etc/sysctl.d/60-custom.conf
+touch /etc/sysctl.d/60-custom.conf
+echo "net.ipv6.conf.all.disable_ipv6 = 1" > /etc/sysctl.d/60-custom.conf
+echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.d/60-custom.conf
+echo "net.ipv6.conf.lo.disable_ipv6 = 1" >> /etc/sysctl.d/60-custom.conf
 
 sysctl -p
 systemctl restart procps
+
+#mv /60-custom.conf /etc/sysctl.d/60-custom.conf
+
+#sysctl -p
+#systemctl restart procps
 
 # Configuracion de upgrades desatendidos.
 
