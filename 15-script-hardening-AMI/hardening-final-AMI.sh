@@ -42,7 +42,7 @@ chown sysadmin2:sysadmin2 -R /home/sysadmin2
 chmod 700 /home/sysadmin2/.ssh
 chmod 400 /home/sysadmin2/.ssh/authorized_keys;
 
-# Se cambia la configuracion por defecto de SSH
+# Se cambia la configuracion por defecto de SSH.
 
 mv /sshd_config /etc/ssh/sshd_config;
 mv /sshd /etc/pam.d/sshd
@@ -60,7 +60,7 @@ sysctl -p /etc/sysctl.conf
 
 mv /*.conf /etc/modprobe.d/
 
-# Se setean los banners
+# Se setean los banners.
 
 mv /issue* /etc/
 
@@ -82,42 +82,32 @@ systemctl restart fail2ban
 # Se copia este archivo que contiene las politicas de password
 # recomendadas por Lynis.
 
-mv /login.defs /etc/
+mv /login.defs /etc/login.defs
 
-# Setea password de GRUB
+# Setea password de GRUB.
 
 mv /40_custom /etc/grub.d/40_custom
 chmod 755 /etc/grub.d/40_custom
 
-# Configura las audit rules
+# Configura las audit rules.
 
 mv /audit.rules /etc/audit/rules.d/
 systemctl restart auditd
 systemctl enable auditd
 
 # 'adduser' en Debian y Ubuntu 22.04 crean directorios home de usuarios con
-# permisos 755. Para cambiarlo de forma que sea segura editamos el valor de 'DIR_MODE'
+# permisos 755. Para cambiarlo de forma que sea segura editamos el valor de 'DIR_MODE'.
 
 sed -i "s/#DIR_MODE=0700/DIR_MODE=0700/" /etc/adduser.conf
 
-# Politicas de contrasenas
-# Largo minimo 14 caracteres
+# Politicas de contrasenas. Largo minimo 14 caracteres.
 
 sed -i "s/# minlen = 8/minlen = 14/" /etc/security/pwquality.conf
 
 # 3 digitos, 3 caracteres en mayuscula, 3 caracteres en minuscula, 3  caracteres
-# de otro tipo
+# de otro tipo.
 
 sed -i "s/# minclass = 0/minclass = 3/" /etc/security/pwquality.conf
-
-
-# Configuracion de adduser.
-
-#mv /adduser.conf /etc/adduser.conf
-
-# Configuracion de pwquality.
-
-#mv /pwquality.conf /etc/security/pwquality.conf 
 
 # Deshabilitar IPv6.
 
@@ -129,16 +119,11 @@ echo "net.ipv6.conf.lo.disable_ipv6 = 1" >> /etc/sysctl.d/60-custom.conf
 sysctl -p
 systemctl restart procps
 
-#mv /60-custom.conf /etc/sysctl.d/60-custom.conf
-
-#sysctl -p
-#systemctl restart procps
-
 # Configuracion de upgrades desatendidos.
 
 mv /50unattended-upgrades /etc/apt/apt.conf.d/50unattended-upgrades
 
-# Eliminar archivos
+# Eliminar archivos.
 
 rm /instalar-paquetes-AMI.sh
 rm /eliminar-paquetes.sh
