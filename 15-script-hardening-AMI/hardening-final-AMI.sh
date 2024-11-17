@@ -84,10 +84,16 @@ systemctl restart fail2ban
 
 mv /login.defs /etc/login.defs
 
-# Setea password de GRUB.
+# Antes se seteaba el password de GRUB pero en el proceso de que la .OVA
+# situada en el bucket S3 de AWS se transformaba a AMI quedo estancado
+# en 39 % y el StatusMessage era "booting".
+#
+# Ahi entendimos que deberia estar esperando el usuario y password.
+#
+# Como es una configuracion importante la dejamos comentada. 
 
-mv /40_custom /etc/grub.d/40_custom
-chmod 755 /etc/grub.d/40_custom
+#mv /40_custom /etc/grub.d/40_custom
+#chmod 755 /etc/grub.d/40_custom
 
 # Configura las audit rules.
 
