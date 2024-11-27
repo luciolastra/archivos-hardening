@@ -28,4 +28,4 @@ wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads
 wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/12-password-grub/40_custom;
 wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/13-updates-desatendidos/50unattended-upgrades;
 wget https://raw.githubusercontent.com/Neo23x0/auditd/master/audit.rules;
-wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/15-script-hardening-AMI/hardening-final-AMI.sh;
+wget https://raw.githubusercontent.com/luciolastra/archivos-hardening/refs/heads/main/15-script-hardening-VM/hardening-final-VM.sh;
